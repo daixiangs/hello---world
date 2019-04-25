@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	#dai {
+		margin: 20px auto;
+		width: 100px;
+		/* height: 500px; */
+		border: 1px solid brown;
+		border-radius:5px; 
+		overflow: hidden;
+	}
+	
+	input.on {
+		width: 10px;
+		height: 10px;
+		display: inline-block;
+		font-size: 12px;
+		cursor: pointer;
+		/* background-color: brown; */
+	}
+	input.on{
+		background-color: blue;
+	}
+	.banner div {
+		/* margin: 20px; */
+		height: 40px;
+		/* line-height: 40px; */
+		margin-left: 10px;
+	}
+	.banner div.on {
+	/* margin: 20px; */
+	height: 40px;
+	/* line-height: 40px; */
+	margin-left: 10px;
+	background-color: brown;
+	}
+
+	span {
+		margin-left: 20px;
+	}
+	span::after {
+	content: "";
+	display: block;
+	width: 5px;height: 5px;
+	}
+	
+	
+	
+	
+	</style>
+</head>
+<body>
+	<div class="banner" id="dai">
+		<p><input type="checkbox" id="all">全选<span id="fal">反选</span></p><hr>
+		  <div><input type="checkbox" >选项1</div>
+			<div><input type="checkbox">选项2</div>
+			<div><input type="checkbox">选项3</div>
+			<div><input type="checkbox">选项4</div>
+			<div><input type="checkbox">选项5</div>
+			<div><input type="checkbox">选项6</div>
+			<div><input type="checkbox">选项7</div>
+			<div><input type="checkbox">选项8</div>
+			<div><input type="checkbox">选项9</div>
+			<div><input type="checkbox">选项10</div>
+	</div>
+
+
+	<script>
+	var dai = document.getElementById('dai');
+	var oDiv=dai.getElementsByTagName('div');
+	var oAll=document.getElementById('all');
+	var oBtn=document.getElementById('fal');
+	for(var i= 0;i<oDiv.length;i++){
+		oDiv[i].flag = -1;
+		oDiv[i].onclick = function (){
+			this.flag = this.flag * -1;
+			if(this.flag === -1) {
+				this.classList.remove('on');
+			}else{
+				this.classList.add('on')
+			}
+		}
+	}
+
+	// 全选
+	oAll.flag = -1;
+	oAll.onclick = function () {
+		this.flag = this.flag*-1;
+		if(this.flag === -1) {
+			this.classList.remove('on');
+		}else{
+			this.classList.add('on');
+		}
+	for(var i= 0;i<oDiv.length;i++) {
+		oDiv[i].flag = this.flag;
+		if (oDiv[i].flag === -1){
+			oDiv[i].classList.remove('on');
+		}else{
+			oDiv[i].classList.add('on');
+		}
+	}
+	}
+	// 反选
+	oBtn.onclick = function () {
+		for(var i= 0;i<oDiv.length;i++) {
+		oDiv[i].flag = -1;
+		if (oDiv[i].flag === -1){
+			oDiv[i].classList.remove('on');
+		}else{
+			oDiv[i].classList.add('on');
+		}
+	}
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</script>
+</body>
+</html>

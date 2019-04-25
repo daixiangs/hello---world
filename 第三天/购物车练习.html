@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	.banner {
+		margin: 10px auto;
+		width: 150px;
+		border: 2px solid blue;
+		border-radius: 5px ;
+	}
+	.item {
+		height: 40px;
+		margin-left: 40px;
+		position: relative;
+		width: 100px;
+		line-height: 40px;
+		text-align: center;
+
+
+
+	}
+	.item::before {
+		content: "";
+		display: block;
+		width: 14px;
+		height: 14px;
+		border: 1px solid #8833ee;
+		position: absolute;
+		top: 50%;margin-top: -8px;
+	}
+	.item::before.on{
+		background-color: chocolate;
+	}
+	.head {
+		width: 100px;
+		margin-left: 40px;
+		position: relative;
+		/* padding: 30px; */
+		height: 50px;
+		line-height: 50px;
+		border-bottom: 2px solid red;
+		box-sizing: border-box;
+	}
+	.head span,span#footer {
+		margin-left: 20px;
+	}
+	.head span::before{
+		content: "";
+		display: block;
+		width: 14px;
+		height: 14px;
+		border: 1px solid #8833ee;
+		position: absolute;
+		top: 50%;margin-top: -8px;
+		/* background-color: chocolate; */
+	}
+	span#footer  {
+		/* margin-left: 20px; */
+		position: relative;
+		/* display: block; */
+		width: 100px;
+		text-align: center;
+		display: inline-block;
+		height: 40px;
+		line-height: 40px;
+		padding-left: 20px;
+		box-sizing: border-box;
+	}
+	#footer::before {
+		content: "";
+		display: block;
+		width: 14px;
+		height: 14px;
+		border: 1px solid #8833ee;
+		position: absolute;
+		top: 50%;margin-top: -8px;
+		/* background-color: chocolate; */
+	}
+	</style>
+</head>
+<body>
+	<div class="banner" id="content">
+		<div class="head" id="header">
+			<span>全选</span>
+		</div>
+		<div class="item">选项(一)</div>
+		<div class="item">选项(二)</div>
+		<div class="item">选项(三)</div>
+		<div class="item">选项(四)</div>
+		<div class="item">选项(五)</div>
+		<div class="item">选项(六)</div>
+		<div class="item">选项(七)</div>
+		<div class="item">选项(八)</div>
+		<div class="item">选项(九)</div>
+		<div class="item">选项(十)</div>
+		<span id="footer">反选</span>
+	</div>
+	<script>
+	var oItems =document.getElementsByClassName('item');
+	var oAll = document.getElementById('header');
+	var oBtn = document.getElementById('footer');
+	
+
+	</script>
+</body>
+</html>

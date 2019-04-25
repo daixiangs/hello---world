@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	   1.作用域链
+	     + 遇到某个 var量时,先在当前找,再往上级找
+	   2.隐式声明全局变量
+		 <script>
+				//a();
+				var a = c = function () {
+				console.log(2)
+				};
+				//a();
+				function a() {
+				console.log(1)
+				}
+				//a();
+
+				(function (b) {
+				b(),
+			  c()
+				var b = c = function a() {
+				console.log(3)
+				}
+				b()
+				})(a);
+				//c();
+		 </script>
+</body>
+</html>

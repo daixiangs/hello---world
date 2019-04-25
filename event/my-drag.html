@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	#app{
+		width: 200px;
+		height: 300px;
+		border: 1px solid #fbc;
+		position: fixed;
+		/* display: flex; */
+		/* justify-content: space-around; */
+
+	}
+	.tab{
+		list-style: none;
+		width: 100%;
+		position: absolute;
+	}
+	.tab li {
+		flex: 1;
+		margin-bottom: 2px;
+		font-size: 20px;
+		background-color: #d09;
+		color: #57c;
+		height: 20%;
+		widows: 100%;
+		text-align: center;
+		vertical-align: text-bottom;
+	}
+	
+	</style>
+</head>
+<body>
+	<div id="app">
+	<ul class="tab">
+		<li>返回 1</li>
+		<li>重新加载 2</li>
+		<li>另存为 3</li>
+		<li>查看网页源代码 4</li>
+		<li>检查 5</li>
+	</ul>
+	</div>
+	<!-- <script src="./node_modules/vue/dist/vue.min.js"></script> -->
+	<!-- <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script> -->
+
+
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+	<script src="./index.js"></script>
+	<!-- <script>
+	new Vue({
+			el: '#app',
+			data: {
+				mes: '明天'
+			}
+		})
+
+	
+	
+	</script> -->
+</body>
+</html>

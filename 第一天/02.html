@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//////////////////////////////
+	var  ary =[1,2,3,4];
+	function fn(ary){
+		ary[0] = 0;
+		ary = [9,3];
+		ary[0]= 100;
+	  arr = [1,2,3]
+		return function (arr){
+			arr[0]=12;
+
+		};
+
+	}
+	var sum = fn(ary);
+	var sum2 = sum(arr);
+	console.log(ary);
+	console.log(sum);
+	console.log(sum2);
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	var i = 2;
+	function fn(){
+		i+=2
+		return function (n){
+			console.log(n+i--)
+		}
+	}
+	var f = fn();
+	f();
+	//////////////////////
+	for(var i = 0;i<oli.length;i++){  //直接把用let 
+		oli[i].onclick = (function (i){
+			// 形成3个不销毁的作用域,每个作用域存贮一个值;
+			return function () {
+				for(var j){
+					// 去类名
+				}
+					// 加类名
+			}
+
+
+
+
+		})(i)
+	/////////////////////////////////////////////////
+	// let 声明的变量只能在块级作用域内使用 
+	for(let j=0;j<3;j++){
+			//内外输出不一样
+		
+	}
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#parent{
+			width: 400px;
+			height: 300px;
+			margin: 10px auto;
+		}
+		#first {
+			width: 100%;
+		}
+		#item {
+			list-style: none;
+		}
+		#item ::after {
+			display: block;
+			content: "";
+			clear: both;
+		}
+		#item li{
+			float: left;
+			width: 33%;
+			height: 50px;
+			border: 1px solid #CAD333;
+			line-height: 50px;
+			text-align: center;
+			color:black;
+			font-size: 18px;
+			background-color: azure;
+			box-sizing: border-box;
+			margin-right: .5%;
+			cursor: pointer;
+		}
+		#item li:first-child {
+			margin-right: 0;
+		}
+		#item li.select{
+			background-color: blue;
+
+		}
+		#car div {
+			display: none;
+			width: 100%;
+			height: 250px;
+			line-height: 250px;
+			box-sizing: border-box;
+			border: 2px solid purple;
+			border-radius: 5px;
+			color: aqua;
+			text-align: center;
+			font-size: 40px;
+			background: yellow;
+		}
+		#car div.select{
+			display: block;
+			background-color: crimson;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="parent">
+		<div id="first" class="choose">
+			<ul id="item">
+				<li class="select">hello world"1</li>
+				<li>"hello world"2</li>
+				<li>"hello world"3</li>
+			</ul>
+		</div>
+		<div id="car">
+			<div class="select" id="six">Microsoft</div>
+			<div>Adobl</div>
+			<div>Google</div>
+		</div>
+	</div>
+	<script>
+// var parent = document.getElementById("parent");
+// var first = parent.getElementById("first");
+
+
+
+
+
+
+
+var Oli = first.getElementsByTagName("li");
+// var car =parent.getElementById("car");
+// var ele = parent.getElementById('pannel');
+// var oDivs =ele.getElementsByTagName("div");
+// var car2 = document.getElementById('car');
+// 获得不了三个div啊;
+var parent=document.getElementById('parent');
+var oDivs=parent.getElementsByTagName('div');
+for(var i=0;i<Oli.length;i++){
+	Oli[i].onclick = (function (a){
+		return function () {
+			for(var j=0;j<Oli.length;j++){
+				Oli[j].className='';
+				oDivs[j].className='';
+			}
+			this.className='select';
+			oDivs[a].className='select';
+		}
+	})(i)
+}
+
+
+
+
+
+
+	</script>
+</body>
+</html>

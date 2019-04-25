@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// 变量提升 作用域 this
+	// 在不同作用域下,this的指向对象问题
+	// 2 .给元素事件行为绑定方法,方法中的this指向被绑定的这个元素;
+	// 3 .看".";
+	var obj = {
+		id:1,
+		fn:function (){
+			console.log(this)
+		}
+	}
+	function A(m){
+		m(alert('hello'));
+		alert('hello');
+	}
+	function B() {
+		alert('hello')
+	}
+	A(B)
+	// 函数B就做A的回调函数
+	// call ,apply,bind
+	// 
+	var a = 6;
+	var obj = {
+		a:1,
+		fn1:(function(a) {
+				this.a=a;
+				a++;
+				return function (){
+					this.a =a;
+					console.log(a);
+				}
+		})(a)
+	}
+	obj.fn1()
+	
+	function g1(){
+		this.g='gg'
+	}
+	var obj4 = {
+		g1:g1,
+		gg:function (){
+			g1();
+		}
+	};
+	obj4.g1();
+	obj4.gg();
+	console.log(obj4);
+	console.log('g' in window)
+	</script>
+</body>
+</html>

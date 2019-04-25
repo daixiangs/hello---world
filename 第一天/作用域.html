@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	// 堆内存的销毁  不在占用时 或重新定义时;
+	// 私有作用域也是一块栈内存;
+	<script>
+	function fn (){
+		console.log(1)
+		return 1;// 基本数据类型或没有
+	}
+	fn();
+	// 函数执行完成私有被销毁
+	</script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	/* var arr = [1,23,4,56,7,89,9,4];
+	arr.forEach(function (a,b) {
+   console.log(a);
+   console.log(b);
+	}) */
+	// 对象的私有属性以及当前对象所属原型链(儿子.__proto__找不到  找 父亲.__proto__里的属性)的共有属性是可以枚举;
+	// 原型链上内置的公有属性  不可枚举
+	function Fn(m,n){
+		console.log(this);
+		console.log(100);
+	}
+	ary=[1,2,3,4,5]
+	Fn.call(ary)
+	// 1,Fn通过__proto__属性找到了Fucntion原型的的call函数,并且让这个函数运行
+  // 2, 当call运行时,改变了Fn中的this 指向call方法的第一个实参,并且让Fn执行
+	// 3, call方法中从第二个实参开始,最终会传给Fn的形参 
+	// 4,非严格模式下   call()传null 不传 undefined Fn的this指向Window
+	// 5,严格模式下传啥是啥
+	Fn.apply({a:1},[2,4])
+	// apply() 最多接受两个参数  把数组的每一项都传给Fn做为实参
+	Fn.bind([2,3]);// 预处理this    没让Fn直接运行  传的参数接受跟call一样  
+	
+	
+	var ary = [2,3,4,5,6,7];
+	for(var i =0;i<ary.length;i++){
+		if(ary[i]>ary[i+1]){
+			var temp =ary[i];
+			ary[i] = ary[i+1];
+			ary[i+1]=temp;
+		}
+	}
+//假设法
+	var max = ary[0];
+	for(var i=0;i<ary.length;i++){
+		if(ary[i]>max){
+			max = ary[i];
+		}
+		// else if(ary[i]<=max){
+
+		// 	// return null
+
+		// }
+		return max
+	}
+
+
+
+
+	var obj1 ={a:1};
+	var obj2 ={a:100,b:2};
+	var obj3 ={c:3,m:6}
+	Object.prototype.myConcat = function (){
+		var obj ={}
+		console.log(arguments)
+		for(var i=0;i<arguments.length;i++){
+			// 遍历每一个实参对象
+			for(var key in arguments[i]){
+				obj[key] = arguments[i][key];
+			}
+		}
+	
+	} 
+	myConcat(obj1,obj2,obj3)
+
+
+
+	function con() {
+		var obj ={};
+		for(var i=0;i<arguments;i++){
+			for(var key in arguments[i]){
+				obj[key]=arguments[i][key]
+			}
+		}
+	}
+	con(obj1,obj2,obj3)
+
+
+
+
+	// q求一组数的平均数
+	function average() {
+
+
+
+
+
+
+
+	}
+	//   1, 原型继承  
+	//   2,中间类继承
+	//   3,call继承
+	//   4,寄生组合继承
+
+
+	function A(){
+		this.x = 100;
+		this.y = 200;
+	};
+	A.prototype.getX = function () {console.log(123)};
+
+	function B(){
+		A.call(this);
+		this.m =666;
+	};
+	var n =new B;
+	// Call 继承  让类A在类B中执行  并且改变类A中this的指向 ,指向类B的实例  ,B类的实例具有类A的私有属性
+	// Object.create : 返回一个个对象,返回的对象并没有指向Obj的原型,指向指向第一个实参
+
+	B.prototype = Object.create(A.prototype)
+
+
+
+	// Try    Catch       异常捕获
+	var ary = [{a:2},{a:4},{a:7},{a:3}]
+	ary.sort(function (a,b){
+		// console.log(a,b)
+		return a.a - b.a
+	});
+	
+
+
+
+	function A(){
+		this.m=1;
+		this.n=1;
+	}
+	function B(){
+		A.call(this);
+		this.m=666;
+	};
+	var n = new B;
+
+	</script>
+</body>
+</html>

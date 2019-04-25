@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// 单例模式, describe 同一事物的属性放到一个{}内,可以定义一个花括号里边放键值对,也可以弄个空对象   
+	// 高级单例模式,利用自执行函数,将描述同一事物的属性和方法   以私有变量的形式保存在自执行函数里面 
+	var oracle = (function(){
+		var b = 1;
+		c=1;
+		var name = 'daxiang';
+		hobby = 'fadai'
+		for(var i =0;i<5;i++){
+			// console.log(i);
+		}
+		window.ff ={
+			key:b,
+		}
+		var dai =  {
+			name:name,
+			hobby:hobby,
+  
+
+		}
+	})();
+	console.log(ff.key)
+
+
+
+
+	// Towars Object    面向对象
+	// 面向对象特性  封装 多态 继承          对象  类  实例 
+	 类:自定义类和内置类;
+
+
+
+
+
+	;(function(){      // 自执行函数前边得加;!
+		var a =1;
+		function fn(){
+			console.log(a)
+		}
+		function fn1(){
+			console.log(a)
+		}
+
+
+
+	})();
+
+
+
+	;(function(){
+		console.log(obj.room)
+	})();
+	var obj = (function(){
+		var name = 'daixiang';
+		var sex = 'man';
+		var room = '301';
+		return {      room:room,}
+
+
+	})();
+
+
+
+
+
+	// 工厂模式   批量生产相同的属性
+	// function createObj (a,b){
+	// 	var obj = {};
+	// 	obj.name = a;
+	// 	obj.age = b;
+	// 	return obj ;
+	// }
+	// var obj1 = createObj('daixiang','30');
+	// var obj2 = createObj('zhufeng','10');
+	 function sumArray(arr){
+		var ary = [];
+		var result = arr.sort(function(a,b){return a-b});
+		ary = ary.concat(result);
+		return ary;
+	}
+	var arr =[2,4,1,7]
+	var Ary = sumArray(arr)
+	console.log(Ary); 
+
+
+	var person1    =  {
+		name:'china',          
+		age:'70years',
+		fn:function () {
+			return obj= {
+				name : name,
+				age:  age,
+			}
+		}
+	}
+	person1.fn();
+	
+
+	var obj = {}
+	var obj1 = new Object({id:1})
+	var str = new String(a)
+	var a = 'daixiang'
+	var str = new String(a)
+	// var str = new String(b)
+	var str = new String(a)
+
+	</script>
+</body>
+</html>

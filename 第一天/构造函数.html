@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// function Person(a){
+	// 	// var object = {} ,this=>object
+ 	// this.name ='daixiang';
+	// 	this.age = 18 ;
+	// 	this.sex = a;
+	// 	// return object
+	// }
+	// var  a = '666'
+	// var person1 = new Person(a); 
+	 //  person当构造函数去执行
+	// 首字母大写     实例是一个对象  person1是实例
+	// 1,构造函数模式 私有作用域
+	// 2,作用域不被销毁
+  // 3,形参赋值 变量提升 
+
+
+
+
+	// 在构造函数中加return
+	// 1 返回基本数据类型 打断代码执行
+	// 2 返回引用数据类型 返回结果将覆盖
+	// 3 this 的属性是私有属性
+
+
+
+	// function Country(){
+	// 	this.n = '123';
+	// 	this.m = 'daixiang';
+	// 	this.b = arguments;
+	// };
+	// var nation = new Country([1,2,3,4,5]);
+	// var pp = nation.hasOwnProperty('n');
+	// hasOwnProperty 是不是一个私有属性
+ 	// ƒ hasOwnProperty() { [native code] }
+	//  function hasPubProperty(obj,attribute){
+	// 	 if(attribute in obj){
+	// 		 if(obj.hasOwnProperty(attribute)){
+	// 			 return false
+	// 		 }else{
+	// 			 return true
+	// 		 }
+	// 	 }else{
+	// 		 return false;
+	// 	 }
+	//  }
+	//  hasPubProperty(obj,attribute);
+	 function hasPubProperty(obj,attr){
+		 if(!obj.hasOwnProperty(attr) && attr in obj){
+			 return true 
+		 }
+		   return false
+	 }
+		var obj1 = {
+			dd:daixiang
+		}
+		var f = hasPubProperty(obj1,dd);
+		console.log(f)
+	
+	 
+	</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		*{
+			padding:0;
+			margin: 0;
+
+		}
+		#app{
+			width: 200px;
+			height: 100px;
+			margin:0 auto;
+		}
+		ul{
+			list-style: none;
+			width: 100%;height: 100%;
+		}
+		ul li{
+			text-align: center;
+		}
+
+
+
+
+
+
+
+	</style>
+</head>
+<body>
+	<div id="app">
+	<ul id="ul">
+		<li id="li1">明天依旧美1</li>
+		<li id="li2">明天依旧美2</li>
+		<li id="li3">明天依旧美3</li>
+		<li id="li4">明天依旧美4</li>
+		<li id="li5">明天依旧美5</li>
+		<li id="li6">明天依旧美5</li>
+	</ul>
+	</div>
+	<script>
+		// 回掉函数 
+		// setTimeout(function(){
+		// },时间);
+		// var timer = setInterval( function() {
+
+		// },1000) ;
+		// clearInterval(timer);
+		// function preNode(ele){
+		// 	var prev = ele.prevousSibing;
+		// 	while (prev){
+		// 		if (prev.nodeType === 1){
+		// 			return prev ;
+		// 		}
+		// 			prev = prev.prevousSibing;
+		// 	}
+		// 			return null;
+
+		// }
+		// function sum(n) {
+		// 	if (n<1){
+		// 		return n
+		// 	}
+		// 	if (n % 15 === 0){
+		// 		return  n + sum(n-1);
+		// 	}
+    //   return sum(n-1);
+		// }
+		// let handsome = {
+		// 	template:'<div>我很英俊</div>'
+		// }
+		// 	let vm = new Vue({
+		// 		el:'#app',
+		// 		components:{
+
+		// 		},
+		// 		data:{
+		// 		}
+		// 	})
+		// 阶乘 
+		// function fn(n){
+		// 	var mul = 0;
+		// 	if(n<=1){
+		// 		return 1
+		// 	}else{
+		// 		return n*fn(n-1)
+		// 	}
+		// 	mul+=n*fn(n-1)
+		// }
+		// 获取所有哥哥元素节点
+		// var li4 = getElementById('li4')
+		// var li4 = document.getElementById('li4');
+		
+		function brother(tarEle){
+			var prev =tarEle.previousSibling;
+			while(prev){
+				if(prev.nodeType === 1){
+					return prev
+				}else{
+					 prev = prev.previousSibling;
+				}
+			}
+		}
+
+
+
+
+
+
+		
+		
+		
+			// console.log(parent)
+		// 	if(parent.lastElementChild === tarEle){
+
+		// 		return parent.children - tarEle 
+		// 	}else{
+		// 				var num  = parent.indexOf(tarEle);
+		// 				for(var i = 0;i<num;i++){
+		// 					return parent.children[i];
+		// 				}
+		// 	}
+			  
+		// }
+	  // 	brother(li4)
+
+		// function fn(a){
+		// 	if(a>2){
+		// 		return a
+		// 	}
+		
+		// 	function fn(b){
+				
+		// 	}
+
+
+		// }
+
+
+
+	</script>
+	<!-- <script src=""></script> -->
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #box {
+            width: 500px;
+            height: 50px;
+            position: absolute;;
+            left: 100px;
+            top: 100px;
+            /*background-color: green;*/
+        }
+        input {
+            width: 500px;
+            height: 50px;
+            margin: 0 auto;
+        }
+        #box div{
+            width: 500px;
+            height: 50px;
+            border: 1px solid #CCC;
+            display: none;
+        }
+        
+        
+    </style>
+</head>
+<body>
+<div id="box">
+
+<input type="text" id="myInput" value="">
+<div class="select">0000</div>
+<div>1111</div>
+<div>2222</div>
+<div>3333</div>
+</div>
+
+
+<script>
+    var box = document.getElementById('box');
+    var divs = box.getElementsByTagName('div');
+    divs = [...divs]
+    myInput.oninput = (ev)=>{
+        ev = ev || window.event;
+        ev.cancelBubbule  = true;
+        console.log(ev);
+        var char = ev.data;
+        divs.forEach((ele,i)=>{
+            ele.style.display = 'block';
+        })
+
+    }
+    
+    // function fn(num1, num2){
+    //     var num3 = num1 + num2;
+    //     console.log(num3);
+    // };
+
+    // fn(10, 20);
+    // fn(1, 2);
+
+    // function fn(){
+    //     console.log(1)
+    // }
+   
+
+    // !function(){}()
+
+    // +~...
+
+    // 数组去重
+    // var ary = [1, 2, 3, 1, "a"];
+    // var ary1 = [];
+
+    // for(var i = 0; i < ary.length; i++){
+    //     var item = ary[i];
+
+    //     if(ary1.indexOf(item) === -1){
+    //         ary1.push(item);
+    //     }
+    // }
+    // console.log(ary1);
+
+    //
+    // var ary = [1, 2, 3, 1, "a"];
+    // var obj = {};
+    // var ary1 = [];
+
+    // for(var i = 0; i < ary.length; i++){
+    //     obj[ary[i]] = ary[i];
+    // }
+
+    // for(var i in obj){
+    //     ary1.push(obj[i])
+    // }
+
+    // console.log(ary1);
+
+    //
+    // var ary = [1, 2, 3, 1, "a", 1];
+    // ary.sort();
+    // // [1, 1, 1, 2, 3, "a"]
+    // for(var i = 0; i < ary.length; i++){
+    //     if(ary[i]  === ary[i + 1]){
+    //         ary.splice(i+1, 1);
+    //         i--;
+    //     }
+    // }
+
+    // console.log(ary);
+
+    // var ary = [1, 2, 3, 1, "a", 1];
+    // var obj = {};
+    // var ary1 = [];
+
+    // for(var i = 0 ; i < ary.length; i++){
+    //     if(obj[ary[i]] === undefined){
+    //         obj[ary[i]] = ary[i];
+    //         ary1.push(ary[i]);
+    //     }
+    // }
+
+    // var ary = [1, 2, 3, 1, 1, "a", 1];
+    // var obj = {};
+
+    // for(var i = 0 ; i < ary.length; i++){
+    //     if(obj[ary[i]] === undefined){
+    //         obj[ary[i]] = ary[i];
+    //     }else{
+    //         ary.splice(i, 1);
+    //         i--;
+    //     }
+    // }
+
+    // console.log(ary);
+
+    // var ary = [1, 2, 3, 1,1, "a", 1];
+    // var obj = {};
+
+    // for(var i = ary.length-1 ; i >= 0; i--){
+    //     if(obj[ary[i]] === undefined){
+    //         obj[ary[i]] = ary[i];
+    //     }else{
+    //         ary.splice(i, 1);
+    //     }
+    // }
+
+    // console.log(ary);
+
+    // var ary = [1, 2, 3, 1, "a", 1, 2];
+    // var obj = {};
+
+    // for(var i = 0; i < ary.length; i++){
+    //     if(obj[ary[i]] === undefined){
+    //         obj[ary[i]] = ary[i];
+    //     }else{
+    //         ary[i] = ary[ary.length-1];
+    //         ary.length--; // 删除最后一项
+    //         i--;
+    //     }
+    // }
+
+    // console.log(ary);
+
+    // 冒泡排序
+    // var ary = [1, 21, 322, 11, 12, 2];
+    // //[1, 21, 11, 322, 12, 2]
+    // for(var j = 0; j < ary.length; j++){
+    //     for(var i = 0 ; i < ary.length; i++){
+    //         if(ary[i] > ary[i+1]){
+    //             var temp = ary[i+1];
+    //             ary[i+1] = ary[i];
+    //             ary[i] = temp;
+    //         }
+    //     }
+    // }
+
+    // console.log(ary);
+
+    // function fn(){
+    //     fn();
+    // }
+
+    // fn();
+
+    // function sum(num){
+    //     if(num === 0){
+    //         return num;
+    //     }
+    //     if(num % 3 === 0 && num % 5 === 0){
+    //         return num + sum(num-1);
+    //     }else{
+    //         return sum(num-1);
+    //     }
+    // };
+
+    // console.log(sum(100));
+    // var ary = [12, 23, 4, 5, 67, 8, 9];
+    //
+    // function Sort(ary) {
+    //     if (ary.length <= 1) {
+    //         return ary;
+    //     }
+    //     var m = Math.floor(ary.length / 2);
+    //     var cur = ary.splice(m, 1)[0];
+    //     var left = [];
+    //     var right = [];
+    //     for (var i = 0; i < ary.length; i++) {
+    //         if (ary[i] > cur) {
+    //             right.push(ary[i])
+    //         } else {
+    //             left.push(ary[i])
+    //         }
+    //     }
+    //     return Sort(left).concat(cur, Sort(right))
+    // }
+    //
+    // console.log(Sort(ary))
+
+    // var ary=[12,23,4,5,67,8,9,8,8];
+    // var ary1 = [];
+
+    // ary1[0] = ary[0];
+
+    // for(var i = 1; i < ary.length; i++){
+    //     // 1、添加的项是最小的
+    //     // 2、添加的项是最大的
+    //     // 3、在中间
+    //     var item = ary[i];
+
+    //     if(item < ary1[0]){
+    //         ary1.unshift(item);
+    //         continue;
+    //     }
+
+    //     if(item > ary1[ary1.length-1]){
+    //         ary1.push(item);
+    //         continue;
+    //     }
+
+    //     for(var j = 0; j < ary1.length; j++){
+    //         if(item < ary1[j]){
+    //             ary1.splice(j, 0, item);
+    //             break;
+    //         }
+    //     }
+    // }
+
+    // console.log(ary1);
+
+
+    // function sortFn(ary){
+    //     var flag = false; // false代表数组已经拍好顺序了
+    //     for(var i = 0; i < ary.length; i++){
+    //         if(ary[i] > ary[i+1]){
+    //             flag = true;
+    //         }
+    //     }
+    // }
+
+</script>
+</body>
+</html>

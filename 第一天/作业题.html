@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// 1、
+var i = 10;       // 20
+function a() {
+    i = 20;
+    console.log(i);  //  20   
+    for (var i = 0; i < 6; i++) {
+        console.log(i);      //  1 2 3 4 5
+    }
+    console.log(this.i);     //  20
+    console.log(i);          //   6
+}
+a();
+console.log(i);              // 20
+
+// 2、
+function test() {
+    b();      //  1   undefined
+    var a = 1;
+    function b() {
+        console.log(1);
+        console.log(a);
+        var a = 2;
+    }
+}
+test();
+
+// 3、
+var i = 10;
+function a() {
+    i = 20;
+    console.log(i);   // 10
+    for (i = 0; i < 6; i++) {
+        console.log(i);  // 0 1 2 3 4 5
+    }
+    console.log(this.i);  // 10
+    console.log(i);       // 6
+}
+a();
+console.log(i);       //     6
+
+// 4、
+function test() {
+    b();
+    var b = 1;
+    function b() {
+        console.log(1);   //   1
+        console.log(a);   //   
+        a = 2;
+    }
+}
+test();
+
+	</script>
+</body>
+</html>

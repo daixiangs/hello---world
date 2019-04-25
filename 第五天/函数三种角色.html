@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var num = 0;    //10
+    function Fn(num) {
+        arguments[0] = 10;
+        this.num = 20;      // Fn()执行时  this.num把相当于window.num 把全局的num改了    变成  20
+        return num;   //  10
+    }
+    Fn.num = 40;
+    Fn.prototype.num = 30;
+    Fn.prototype.getNum = function () {
+        console.log(this.num);    
+    };
+    var f = new Fn(num);  
+    console.log(f.num);   //   20
+    f.getNum();  //       20
+    Fn.prototype.getNum();   //   30
+    console.log(num);        //  10
+    var n = Fn(num);         // 
+    console.log(n);          // {num}
+    console.log(num);        //  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		//////////////////
+
+	function C1(name) {
+	if (name) {      // name是undefined   下边的代码不会执行
+		this.name = name;
+	};
+}
+
+function C2(name) {
+	this.name = name;
+}
+
+function C3(name) {
+	this.name = name || 'join';
+}
+C1.prototype.name = 'Tom';
+C2.prototype.name = 'Tom';
+C3.prototype.name = 'Tom';
+console.log(new C1().name)      // ''     
+console.log(new C2().name)
+console.log(new C3().name)
+
+
+	
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            
+        }
+        img {
+            display: block;
+            width: 100%;
+        }
+        #smallBox {
+            position: absolute;
+            left: 0;
+            top: 50px;
+            width: 300px;
+            height: 300px;
+            border: 1px solid #CCCCDD;
+        }
+        #mark {
+            width: 100px;
+            height: 100px;
+            background-color: #CCD;
+            position: absolute;
+            display: none;
+            left: 0;
+            top: 0;
+        }
+        #bigBox {
+            width: 600px;
+            height: 600px;
+            position: absolute;
+            left: 350px;
+            top: 50px;
+            display: none;
+        }
+        
+    
+    </style>
+</head>
+<body>
+<div id="smallBox">
+    <div id="mark">
+    
+    </div>
+    <div id="flaotbox"></div>
+    <img src="./img/iphone.jpg" alt="">
+</div>
+<div id="bigBox">
+    <img src="./img/iphone_big.jpg" alt="">
+    
+</div>
+
+<script>
+var small = document.getElementById('smallBox');
+var mark = document.getElementById('mark');
+var bigBox = document.getElementById('bigBox');
+var bigImg = bigBox.getElementsByClassName('img');
+small.onmousedown = (ev)=>{
+    ev = ev || window.event;
+    // console.log(this);
+    // console.log(small.offsetTop);
+   var X = ev.clientX - small.offsetLeft;//0
+   var Y = ev.clientY - small.offsetTop;//50
+   console.log(X,Y);
+   document.documentElement.onmousemove = (ev)=>{
+       // console.log(1234);
+       mark.style.display = 'block';
+       bigBox.style.display = 'block';
+       var curl = X + mark.offsetWidth/2;
+       var curh = Y + mark.offsetHeight/2;
+       console.log(curl,curh);
+       
+       // if (curl<=0){
+       //     curl=0
+       // }
+       // if(curl>=small.offsetWidth - mark.offsetWidth){
+       //     curl = small.offsetWidth - mark.offsetWidth
+       // }
+       // if (curh<=50) {
+       //     curh = 50
+       // }
+       // if(curh>=50 + small.offsetHeight - mark.offsetHeight){
+       //     curh = 50 + small.offsetHeight - mark.offsetHeight
+       // }
+       small.style.left = 'px'+ curl;
+       console.log(1234);
+       mark.style.top = 'px'+ curh + 50;
+       var percentX = mark.offsetWidth/bigBox.offsetWidth;
+       var percentY = mark.offsetHeight/bigBox.offsetHeight;
+       bigBox.style.left = 'px' + 350 - curl*percentX;
+       bigBox.style.top = 'px' + 50 - curl*percentY;
+   }
+   document.documentElement.onmouseup = (ev)=>{
+       small.onmousedown = null;
+       document.documentElement.onmousemove = null;
+   }
+   
+
+}
+</script>
+</body>
+</html>

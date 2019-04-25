@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	#list {
+		width: 300px;
+		margin: 30px auto;
+		list-style: none;
+	}
+	#list li{
+		height: 30px;
+		line-height: 30px;
+		width:100%;
+		text-align: center;
+		border-bottom:1px solid red;	
+	}
+	#btn {
+			margin: 20px auto;
+			background-color: blue;
+			display: block;
+			width: 100px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			cursor: pointer;
+	}
+	</style>
+</head>
+<body>
+	<ul id="list">
+		<li>45</li>
+		<li>3</li>
+		<li>2</li>
+		<li>66</li>
+		<li>22</li>
+		<li>23</li>
+	</ul>
+	<button id="btn">排序</button>
+	<script>
+	var oli =document.getElementsByTagName('li');
+	var ul = document.getElementById('list');	
+	var btn =document.getElementById('btn');
+	btn.flag = -1;
+	btn.onclick = function fn(){
+		var ary = Array.prototype.slice.apply(oli);
+		// console.log(ary);
+		this.flag *= -1;
+		var that = this;
+		ary.sort(function(a,b){
+			// console.log(a,b)
+			return that.flag*(a.innerHTML - b.innerHTML);
+		});
+		// console.log(ary);
+		for(var i=0;i<ary.length;i++){
+			ul.appendChild(ary[i]);
+			// debugger;
+		}
+		return ul
+	}
+	
+	</script>
+</body>
+</html>
+<!-- 
+	JSON.parse
+	var str='{"a":2}'      
+	o = JSON.parse(str)
+	
+
+
+
+
+
+
+ -->

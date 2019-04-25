@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#content {
+			margin: 20px auto;
+			border-radius: 5px;
+			border: 1px solid #dd3300;
+			width: 306px;
+
+		}
+		ul {
+			list-style: none;
+			height: 52px;
+		}
+		#item::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		#item li{
+			float: left;
+			height: 50px;
+			width: 100px;
+			line-height: 50px;
+			text-align: center;
+			color: rgb(145, 25, 201);
+			border: 1px solid rebeccapurple;
+			background-color: bisque;
+			cursor: pointer;	
+		}
+		#item li.cur {
+			background-color: #dd3300;
+
+		}
+		#pannel {
+			width: 304px;
+			height: 200px;
+			/* border: 1px solid #666AAA; */
+			overflow: hidden;
+		}
+		#pannel div {
+			/* background-image: url("") */
+			width: 100%;
+			/* height: 100%; */
+			height: 50px;
+			text-align: center;
+			padding-top: 50px;
+			display: none;
+		}
+		#pannel div.cur {
+			display: block;
+		}
+
+	</style>
+</head>
+<body>
+<div id="content">
+	<div id="item">
+	<ul>
+		<li class="cur">周杰伦1</li>
+		<li>许嵩2</li>
+		<li>陈奕迅3</li>
+	</ul>
+	</div>
+	<div id="pannel">
+		<div class="cur">青花瓷</div>
+		<div>断桥残雪</div>
+		<div>十年</div>
+	</div>
+</div>
+<script>
+var oItem =document.getElementById('item');
+var oli = oItem.getElementsByTagName('li');
+var Pannel = document.getElementById('pannel');
+var oDiv = Pannel.getElementsByTagName('div');
+// 下边没有逻辑
+for(var i = 0;i<oli.length;i++){
+		// console.log(i)
+  // ;(function (){
+		// console.log(a);
+	oli[i].onclick=(function (a){
+		// this.ind = i;
+		console.log(a);
+		console.log(i);
+		return function () {for(var j = 0;j<oli.length;j++){
+			oli[j].className = "";
+			oDiv[j].className ="";
+			console.log(j);
+		}
+		this.className ='cur';
+		oDiv[a].className='cur';
+		console.log(j);
+		}
+
+})(i);
+	console.log(i);
+}
+
+
+
+</script>
+
+</body>
+</html>

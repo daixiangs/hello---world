@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+
+<body>
+	<div id="app">
+		<h1 @click="changeName">{{ name }}</h1>
+		<input type="checkbox" name="dai" id="" @change="fa" v-model="all">
+		<input type="checkbox" name="" id="" v-model="checked" value="a">
+		<input type="checkbox" name="" id="" v-model="checked" value="b">
+		<input type="checkbox" name="" id="" v-model="checked" value="c">
+		<input type="checkbox" name="" id="" v-model="checked" value="d">
+	</div>
+	<script src="./node_modules/vue/dist/vue.js"></script>
+	<script>
+		var vm = new Vue({
+			el: '#app',
+			data: {
+				name: 'hello world',
+				checked: [],
+				all: false,
+			},
+			mounted() {
+				// console.log(this.all);
+				// console.log(this.checked);
+
+			},
+			updated() {
+				let reset = () => {
+					console.log(this.all)
+					if (this.all) {
+						// alert(123)
+						this.ckecked = ['a', 'b', 'c', 'd']
+					} else {
+						this.checked = []
+					}
+				};
+				new Promise((res, rej) => {
+					if (err) {
+						console.log('you are error');
+					}
+					else {
+						res(100)
+					}
+					console.log(`promise nei bu zhi xing`);
+					
+				}).then((url) => {
+					console.log(url);
+					
+				}).catch((err) => {
+					return new Error(`because you aer ${err}`)
+				});
+				// alert('出错了');
+			},
+			methods: {
+				fa() {
+					this.all ? this.checked = ['a', 'b', 'c', 'd'] : this.checked = [];
+				},
+				changeName(e) {
+					console.log(e);
+					
+					this.name = '北京欢迎你';
+				}
+			},
+		})
+	</script>
+</body>
+
+</html>

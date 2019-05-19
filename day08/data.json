@@ -1,0 +1,28 @@
+[{
+		"'name'": "'zhufeng'"
+	},
+	{
+		"age": "8"
+	},
+	{
+		"adress": "回龙观"
+	},
+	{
+		"string|1-10": "★",
+		"string2|3": "★★",
+		"number|+1": 202,
+		"number2|1-100.1-10": 1,
+		"boolean|1": true,
+		"regexp": /[a-z][A - Z][0-9]/,
+		"absolutePath": "@/string @/user/name",
+		"user": {
+		"name": "demo"
+	},
+	"object|2": {
+		"310000": "上海市",
+		"320000": "江苏省"
+	},
+	"array|1": [
+		"AMD"
+	]
+}]

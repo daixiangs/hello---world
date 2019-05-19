@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<title>Document</title>
+</head>
+
+<body>
+	<div id="app" class="panel bg-default">
+		<table class="table table-bordered table-center">
+			<h2>{{checkbox}}</h2>
+			<div class="main">
+				<input type="checkbox" name="" id="" v-model="all" @change="selectAll"><span>all</span>
+				<input type="checkbox" name="" id="" v-model="checked" value="a"><span>html</span>
+				<input type="checkbox" name="" id="" v-model="checked" value="b"><span>Css</span>
+				<input type="checkbox" name="" id="" v-model="checked" value="c"><span>javaScript</span>
+				<input type="checkbox" name="" id="" v-model="checked" value="d"><span>Vue</span>
+				<input type="checkbox" name="" id="" v-model="checked" value="e"><span>React</span>
+			</div>
+			<h2>{{ radiobox }}</h2>
+			<div class="content">
+				<label for="sex">
+					<span>男</span><input type="radio" name="" id="" value="a"  v-model="single">
+					<span>女</span><input type="radio" name="" id="" value="b" v-model="single">
+				</label>
+			</div>
+			<h2>{{ changeyourselfbase}}</h2>
+			<select>
+				<option value="volvo">Volvo</option>
+				<option value="saab">Saab</option>
+				<option value="opel">Opel</option>
+				<option value="audi">Audi</option>
+			</select>
+		</table>
+
+	</div>
+	<script src="node_modules/vue/dist/vue.js"></script>
+	<script>
+		var vm = new Vue({
+			el: '#app',
+			data() {
+				return {
+					checkbox: `复选框`,
+					radiobox: `单选框`,
+					changeyourselfbase: `选择你自己基础`,
+					checked:[],
+					all:false,
+					// html:'',
+					// css:'',
+					// js:'',
+					// vue:'',
+					// react:'',
+					single:'',
+				}
+			},
+			methods: {
+				selectAll() {
+					// alert(123);
+					this.all ? this.checked = ['a','b','c','d','e'] : this.checked = [];
+				},
+			},
+		})
+	</script>
+</body>
+
+</html>

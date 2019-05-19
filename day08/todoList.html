@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+	<title>Document</title>
+	<style>
+	[v-cloak] {
+		display: none;
+	}
+	
+	</style>
+</head>
+<body>
+	<div id="app">
+		<h1>待做事列表</h1>
+		<div>
+			<input type="text" name="" id="" v-model="val" @keyup='fn'>
+		</div>
+		<ul v-cloak>
+			<li v-for="(item,index) in arr"  >
+				{{item.todo}}&nbsp;{{ item.time }}
+				 <button @click="del(index)" class="btn btn-info">删除</button>
+			</li>
+		</ul>
+	</div>
+	<script src="./node_modules/vue/dist/vue.js"></script>
+	<script>
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			arr:[],
+			val:'',
+		},
+		methods: {
+			fn(e) {
+				if (e.keyCode === 13 && this.val !== '') {
+					let obj = {
+						time:new Date().toLocaleDateString(),
+						todo:this.val
+					};
+					this.arr.push(obj);
+					this.val = '';
+				}
+			},
+			del(idx) {
+				this.arr = this.arr.filter((item,index) => index !== idx )
+			}
+		},
+	})
+	</script>
+</body>
+</html>
